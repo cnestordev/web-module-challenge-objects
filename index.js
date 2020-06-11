@@ -1,7 +1,7 @@
 ///////////////Menu Items (MVP)///////////////////
 //Instructions found in Notes.txt file
 
-let styles = 'background: #0056d8; color: white; padding: 5px;';
+let styles = 'background: #0056d8; color: white; padding: 2px;';
 
 const latte = { name: 'Cafe Latte', price: 4, category: 'Drinks' };
 const burger = { name: 'Burger', price: 18, category: 'Lunch' };
@@ -227,3 +227,5 @@ console.log('adding 30 miles');
 console.log(usedCar.drive(30));
 console.log('logging car object');
 console.log(usedCar);
+
+console.log('%c ----END OF PROJECT---------', styles);
