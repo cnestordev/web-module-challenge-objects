@@ -1,6 +1,8 @@
 ///////////////Menu Items (MVP)///////////////////
 //Instructions found in Notes.txt file
 
+let styles = 'background: #0056d8; color: white; padding: 5px;';
+
 const latte = { name: 'Cafe Latte', price: 4, category: 'Drinks' };
 const burger = { name: 'Burger', price: 18, category: 'Lunch' };
 const breakfastBurrito = {
@@ -10,6 +12,10 @@ const breakfastBurrito = {
 };
 
 // ------------Task 1a ----------------------------------------------------------------------------
+console.log(
+  '%c ****************** TASK 1a (createMenuItem) ******************',
+  styles
+);
 
 function createMenuItem(name, price, category) {
   return {
@@ -19,13 +25,24 @@ function createMenuItem(name, price, category) {
   };
 }
 
+console.log(createMenuItem('Skittles Smoothie', 4, 'Drink'));
+
 // ------------Task 1b ----------------------------------------------------------------------------
+console.log(
+  '%c *************** TASK 1b (create 3 menu items) ************************',
+  styles
+);
 
 console.log(createMenuItem('Pizza', 12, 'Lunch'));
 console.log(createMenuItem('Soda', 2, 'Drink'));
 console.log(createMenuItem('Salad', 9, 'Lunch'));
 
 // ------------Task 2 ----------------------------------------------------------------------------
+
+console.log(
+  '%c ******************** TASK 2 (calculate burger discount) *********************************',
+  styles
+);
 
 burger.calcDiscount = function (person) {
   if (person === 'student' || person === 'teacher') {
@@ -34,6 +51,16 @@ burger.calcDiscount = function (person) {
   return this.price * 0.9;
 };
 
+console.log(`original cost of burger is ${burger.price}`);
+
+console.log("passing the string 'student': ");
+console.log(burger.calcDiscount('student'));
+
+console.log("passing the string 'teacher': ");
+console.log(burger.calcDiscount('teacher'));
+
+console.log("passing the string 'other': ");
+console.log(burger.calcDiscount('other'));
 ///////////////Reviews (MVP)///////////////////
 
 const reviews = [
@@ -76,21 +103,33 @@ const reviews = [
   { name: 'Reyna', rating: 3.5, feedback: '' },
 ];
 
-// ------------Task 4 ----------------------------------------------------------------------------
-
+// ------------Task 3 ----------------------------------------------------------------------------
+console.log(
+  '%c ******************** TASK 3 (console.log julius feedback) *********************************',
+  styles
+);
+console.log(`${reviews[5].name}:`);
 console.log(reviews[5].feedback);
 
-// ------------Task 5 ----------------------------------------------------------------------------
+// ------------Task 4 ----------------------------------------------------------------------------
+console.log(
+  '%c ******************** TASK 4 (create own review) *********************************',
+  styles
+);
 
 const myReview = {
   name: 'Nestor',
   rating: 5,
   feedback: 'The food was very good!',
 };
-//Unsure whether this should be pushed into reviews array?
-reviews.push(myReview);
 
-// ------------Task 6 ----------------------------------------------------------------------------
+console.log(myReview);
+
+// ------------Task 5 ----------------------------------------------------------------------------
+console.log(
+  '%c ******************** TASK 5 (add feedback to Reyna) *********************************',
+  styles
+);
 
 for (let i = 0; i < reviews.length; i++) {
   if (reviews[i].name === 'Reyna') {
@@ -101,21 +140,37 @@ for (let i = 0; i < reviews.length; i++) {
 
 console.log(reviews);
 
-// ------------Task 7 ----------------------------------------------------------------------------
+// ------------Task 6 ----------------------------------------------------------------------------
+console.log(
+  '%c ******************** TASK 6 (getReviewByIndex) *********************************',
+  styles
+);
 
 function getReviewByIndex(reviews, index) {
   const capturedObj = reviews[index];
   return `${capturedObj.name} gave the restaurant a ${capturedObj.rating} star review and their feedback was: ${capturedObj.feedback}`;
 }
 
-// ------------Task 8 ----------------------------------------------------------------------------
+console.log(getReviewByIndex(reviews, 0));
+
+// ------------Task 7 ----------------------------------------------------------------------------
+console.log(
+  '%c ******************** TASK 7 (getLastReview) *********************************',
+  styles
+);
 
 function getLastReview(arr) {
   const lastReview = arr[arr.length - 1];
   return `${lastReview.name} gave the restaurant a ${lastReview.rating}, and their feedback was: ${lastReview.feedback}`;
 }
 
+console.log(getLastReview(reviews));
+
 // ------------Stretch 1 ----------------------------------------------------------------------------
+console.log(
+  '%c ******************** STRETCH 1 (getReviewByRating) *********************************',
+  styles
+);
 
 function getReviewByRating(reviews, rating) {
   const filteredReviews = [];
@@ -128,7 +183,13 @@ function getReviewByRating(reviews, rating) {
   return filteredReviews;
 }
 
+console.log(getReviewByRating(reviews, 4));
+
 // ------------Task 2 ----------------------------------------------------------------------------
+console.log(
+  '%c ******************** STRETCH 2 (getLongReviews) *********************************',
+  styles
+);
 
 function getLongReviews(arr) {
   let longReviews = [];
@@ -142,7 +203,13 @@ function getLongReviews(arr) {
   return longReviews;
 }
 
+console.log(getLongReviews(reviews));
+
 // ------------Task 3 ----------------------------------------------------------------------------
+console.log(
+  '%c ******************** STRETCH 3 (carMaker) *********************************',
+  styles
+);
 
 function carMaker(odometer) {
   return {
@@ -153,3 +220,10 @@ function carMaker(odometer) {
     },
   };
 }
+
+const usedCar = carMaker(500);
+console.log(usedCar);
+console.log('adding 30 miles');
+console.log(usedCar.drive(30));
+console.log('logging car object');
+console.log(usedCar);
